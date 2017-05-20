@@ -1,0 +1,31 @@
+ {% extends 'base.html' %}
+ {% block content %}
+ <!-- Jumbotron -->
+      <div class="jumbotron">
+		<div class="center" style="text-align:center">
+			<h1>Bunch of Logs!!</h1>
+			<p class="lead">Select a log file from dropdown to check last 10 logs</p>
+			<!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p> -->
+			<p>
+				<select name="files" class="dropdown" style="width:50%;">
+					{% for key, value in data.items() %}
+						<optgroup label="{{key}}">
+							{% for res in value %}
+								<option value="{{res.0}}">{{res.1}}</option>
+							{% endfor %}
+						</optgroup>
+					{% endfor %}				
+				</select>
+				
+			</p>
+		</div>
+      </div>
+	<hr/>
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h4>Response</h4>
+          <div class="renderBlock"> Loading..... </div>
+        </div>
+      </div>
+{% endblock %}
