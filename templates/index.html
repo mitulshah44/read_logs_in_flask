@@ -7,7 +7,7 @@
 			<p class="lead">Select a log file from dropdown to check last 10 logs</p>
 			<!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p> -->
 			<p>
-				<select name="files" class="dropdown" style="width:50%;">
+				<select name="files" class="dropdown" id="ddfiles" style="width:50%;">
 					{% for key, value in data.items() %}
 						<optgroup label="{{key}}">
 							{% for res in value %}
